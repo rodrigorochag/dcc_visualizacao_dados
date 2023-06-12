@@ -33,5 +33,5 @@ def graficos(request): # pega o grafico do arquivo codigo_graficos/graficos.py d
 def aluno(request):
     return render(request, 'aluno.html')
 
-def dados(request):
+def fonte_dados(request):
     return render(request, 'fonte_dados.html')
