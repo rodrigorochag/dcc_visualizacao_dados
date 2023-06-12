@@ -18,11 +18,16 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include, path
 from django.views.generic import TemplateView # importa arquivos de template da pasta data_visualization/templates
+from django.views import *
+from data_visualization.views import *
 
+
+#URL DE END-POINT
 
 urlpatterns = [
-    path('', include('data_visualization.urls')),
+    #path('', include('data_visualization.urls')),
     path('admin/', admin.site.urls),
-    path('graficos', TemplateView.as_view(template_name="home.html")),
-    path('fonte', TemplateView.as_view(template_name="fonte_dados.html"))
+    path('', TemplateView.as_view(template_name="home.html")),
+    path('fonte_dados/', TemplateView.as_view(template_name="fonte_dados.html")),
+    path('aluno/', TemplateView.as_view(template_name="aluno.html"))
 ]

@@ -1,63 +1,26 @@
+{% extends 'main.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>{% block title %} Mudanças climáticas{% endblock %}</title>
-  {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-</head>
-<body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="fonte_dados.html">Fonte dos dados</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Informações aluno</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+{% block title %} Gráficos {%endblock title%}
+{% block content %}
+
+
+{{ block.super }}
 
 
 
-<center><h1>Trabalho final de Visualização de dados</h1>
-<div>
-<br>
-    <p>
-       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, facilis. 
-       Aut mollitia dolor cum dolore dolorem illo quo fugit nemo enim dolores animi quia, totam quos ratione. Animi, possimus reiciendis.
-       Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, eos. Rem maxime facilis voluptates vero rerum soluta facere! Expedita atque accusamus iste magnam voluptates sunt aliquam sint, dicta odit error?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque error doloribus quod suscipit illum ipsa! Vero ducimus, molestias adipisci at eligendi recusandae magnam sit quidem iure deserunt reiciendis possimus porro.
-    </p>
-   
-    <div id="graph">
-      {{ graph_temperature_brazil|safe }}
-  
-  
-</center>
+
+<div id="graph_temperature_brazil">
+  {{ graph_temperature_brazil|safe }}
+
+
 </div>
 
-</div>
+
 <div id="graph_html2">
-  {{ graph_co2_emissions_brazil|safe }}
+{{ graph_co2_emissions_brazil|safe }}
 </div>
-  {% block content %}
-  {% endblock %}
-</div>
-</body>
-</html>
+
+{% endblock content %}
