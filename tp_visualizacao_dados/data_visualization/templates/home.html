@@ -1,74 +1,26 @@
+{% extends 'main.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>{% block title %} Mudanças climáticas{% endblock %}</title>
-  {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-</head>
-<body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">UFMG</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/fonte_dados/">Fonte dos dados</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/aluno/">Informações aluno</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+{% block title %} Gráficos {%endblock title%}
+{% block content %}
+
+
+{{ block.super }}
 
 
 
-<center><h1>Trabalho final de Visualização de dados</h1>
-  <div id="primeiro_paragrafo">
-<br>
-    <p>
-      As mudanças climáticas são um dos maiores desafios enfrentados pela humanidade atualmente. Elas são causadas principalmente pelo aumento das concentrações de gases de efeito estufa na atmosfera, resultantes das atividades humanas, como a queima de combustíveis fósseis, o desmatamento e o desflorestamento.</div>
-    </p>
-  </div>
-    <br>
-    <p>
-      Um dos principais contribuintes para as mudanças climáticas é a emissão de dióxido de carbono (CO2) na atmosfera. O CO2 é liberado principalmente pela queima de combustíveis fósseis, como carvão, petróleo e gás natural, para gerar energia, transporte e processos industriais. Essas emissões são responsáveis pelo aumento do efeito estufa, que causa o aquecimento do planeta.
 
-Além das emissões de CO2, o desmatamento das florestas também desempenha um papel crucial nas mudanças climáticas. As florestas atuam como sumidouros de carbono, absorvendo o CO2 da atmosfera por meio do processo de fotossíntese. No entanto, quando as árvores são cortadas ou queimadas, o carbono armazenado nelas é liberado de volta à atmosfera, contribuindo para o aumento das concentrações de CO2.
-    </p>
-    <div id="graph">
-      {{ graph_temperature_brazil|safe }}
-  
-  
-</center>
+<div id="graph_temperature_brazil">
+  {{ graph_temperature_brazil|safe }}
+
+
 </div>
 
-</div>
+
 <div id="graph_html2">
-  {{ graph_co2_emissions_brazil|safe }}
+{{ graph_co2_emissions_brazil|safe }}
 </div>
 
-<div id="graph_html3">
-  <p>Além de todos os maleficícios que a emissão crescente de CO2 gera na atmosfera, a alta constante no desmatamento florestal é também um fator muito preocupante, pois as florestas possuem diversos papeis importantes para a o planeta, sendo um agente que ajuda a decompor o CO2 na atmosfera, regular a temperatura e também para reter umidade e gerar mais preciptações no ambiente</p>
-  {{ graph_desmatamento_brazil|safe }}
-  <div id="texto_desmatamento">
-</div></div>
-
-  {% block content %}
-  {% endblock %}
-</div>
-</body>
-</html>
+{% endblock content %}
